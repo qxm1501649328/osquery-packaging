@@ -23,13 +23,13 @@ if(DEFINED OSQUERY_SOURCE_DIRECTORY_LIST)
 endif()
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/deb/lib/systemd/system/osqueryd.service"
+  FILES "${OSQUERY_DATA_PATH}/control/deb/lib/systemd/system/agenttoold.service"
   DESTINATION "/usr/lib/systemd/system"
   COMPONENT osquery
 )
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/deb/etc/init.d/osqueryd"
+  FILES "${OSQUERY_DATA_PATH}/control/deb/etc/init.d/agenttoold"
   DESTINATION "/etc/init.d"
   COMPONENT osquery
 
@@ -40,7 +40,7 @@ install(
 )
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/deb/etc/default/osqueryd"
+  FILES "${OSQUERY_DATA_PATH}/control/deb/etc/default/agenttoold"
   DESTINATION "/etc/default"
   COMPONENT osquery
 )

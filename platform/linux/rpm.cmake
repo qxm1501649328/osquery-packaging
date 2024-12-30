@@ -31,7 +31,7 @@ list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION
 )
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/rpm/etc/init.d/osqueryd"
+  FILES "${OSQUERY_DATA_PATH}/control/rpm/etc/init.d/agenttoold"
   DESTINATION "/etc/init.d"
   COMPONENT osquery
 
@@ -42,13 +42,13 @@ install(
 )
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/rpm/lib/systemd/system/osqueryd.service"
+  FILES "${OSQUERY_DATA_PATH}/control/rpm/lib/systemd/system/agenttoold.service"
   DESTINATION "/usr/lib/systemd/system"
   COMPONENT osquery
 )
 
 install(
-  FILES "${OSQUERY_DATA_PATH}/control/rpm/etc/sysconfig/osqueryd"
+  FILES "${OSQUERY_DATA_PATH}/control/rpm/etc/sysconfig/agenttoold"
   DESTINATION "/etc/sysconfig"
   COMPONENT osquery
 )
