@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2014-present, The osquery authors
+# Copyright (c) 2014-present, The agenttool authors
 #
 # This source code is licensed as defined by the LICENSE file found in the
 # root directory of this source tree.
@@ -21,7 +21,7 @@ else()
 endif()
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX "/opt/osquery" CACHE PATH "" FORCE)
+  set(CMAKE_INSTALL_PREFIX "/opt/agenttool" CACHE PATH "" FORCE)
 endif()
 
 if(NOT CPACK_PACKAGING_INSTALL_PREFIX)
@@ -31,8 +31,8 @@ endif()
 
 install(
   FILES
-    "${OSQUERY_DATA_PATH}/opt/osquery/bin/agenttoold"
-    "${OSQUERY_DATA_PATH}/opt/osquery/bin/agenttoolctl"
+    "${OSQUERY_DATA_PATH}/opt/agenttool/bin/agenttoold"
+    "${OSQUERY_DATA_PATH}/opt/agenttool/bin/agenttoolctl"
   
   DESTINATION
     "bin"
@@ -47,17 +47,17 @@ install(
 )
 
 execute_process(
-  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/osquery/bin/agenttoold" agenttooli
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/agenttool/bin/agenttoold" agenttooli
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
 execute_process(
-  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/osquery/bin/agenttoolctl" agenttoolctl
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/agenttool/bin/agenttoolctl" agenttoolctl
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
 execute_process(
-  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/osquery/bin/agenttoold" agenttoold
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/agenttool/bin/agenttoold" agenttoold
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
@@ -75,25 +75,25 @@ install(
 )
 
 install(
-  DIRECTORY "${OSQUERY_DATA_PATH}/opt/osquery/share/osquery"
+  DIRECTORY "${OSQUERY_DATA_PATH}/opt/agenttool/share/agenttool"
   DESTINATION "share"
   COMPONENT osquery
 )
 
 install(
   DIRECTORY
-  DESTINATION "/etc/osquery"
+  DESTINATION "/etc/agenttool"
   COMPONENT osquery
 )
 
 install(
   DIRECTORY
-  DESTINATION "/var/osquery"
+  DESTINATION "/var/agenttool"
   COMPONENT osquery
 )
 
 install(
   DIRECTORY
-  DESTINATION "/var/log/osquery"
+  DESTINATION "/var/log/agenttool"
   COMPONENT osquery
 )
