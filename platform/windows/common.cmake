@@ -24,11 +24,11 @@ set(directory_name_list
 
 set(file_name_list
   "manage-osqueryd.ps1"
-  "osquery.conf"
-  "osquery.flags"
-  "osquery.man"
+  "agenttool.conf"
+  "agenttool.flags"
+  "agenttool.man"
   "osquery_utils.ps1"
-  "osqueryi.exe"
+  "agenttool.exe"
 )
 
 foreach(directory_name ${directory_name_list})

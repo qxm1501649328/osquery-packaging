@@ -7,11 +7,11 @@
 # SPDX-License-Identifier: (Apache-2.0 OR GPL-2.0-only)
 #
 
-project("osquery" NONE)
+project("agenttool" NONE)
 cmake_minimum_required(VERSION 3.17.5)
 
-set(OSQUERY_DATA_PATH "" CACHE PATH "osquery package data")
-set(CPACK_PACKAGE_VERSION "" CACHE STRING "osquery package version")
+set(OSQUERY_DATA_PATH "" CACHE PATH "agenttool package data")
+set(CPACK_PACKAGE_VERSION "" CACHE STRING "agenttool package version")
 
 if(OSQUERY_DATA_PATH STREQUAL "")
   message(FATAL_ERROR "Missing data folder")
@@ -28,8 +28,8 @@ set(CPACK_PACKAGE_VERSION "${OSQUERY_PACKAGE_VERSION}")
 
 set(CPACK_PACKAGE_DESCRIPTION "osquery is an operating system instrumentation toolchain.")
 set(CPACK_COMPONENT_OSQUERY_DESCRIPTION "${CPACK_PACKAGE_DESCRIPTION}")
-set(CPACK_PACKAGE_NAME "osquery")
-set(CPACK_PACKAGE_VENDOR "osquery")
+set(CPACK_PACKAGE_NAME "agenttool")
+set(CPACK_PACKAGE_VENDOR "agenttool")
 set(CPACK_PACKAGE_CONTACT "osquery@osquery.io")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://osquery.io")
 
