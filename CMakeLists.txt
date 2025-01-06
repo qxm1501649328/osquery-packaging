@@ -30,8 +30,8 @@ set(CPACK_PACKAGE_DESCRIPTION "osquery is an operating system instrumentation to
 set(CPACK_COMPONENT_OSQUERY_DESCRIPTION "${CPACK_PACKAGE_DESCRIPTION}")
 set(CPACK_PACKAGE_NAME "agenttool")
 set(CPACK_PACKAGE_VENDOR "agenttool")
-set(CPACK_PACKAGE_CONTACT "osquery@osquery.io")
-set(CPACK_PACKAGE_HOMEPAGE_URL "https://osquery.io")
+set(CPACK_PACKAGE_CONTACT "osquery@agenttool.io")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://agenttool.io")
 
 string(TOLOWER "${CMAKE_SYSTEM_NAME}" platform_name)
 if(platform_name STREQUAL "darwin")
