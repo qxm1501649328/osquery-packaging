@@ -13,10 +13,10 @@ set(CPACK_SET_DESTDIR ON)
 
 install(
   DIRECTORY
-    "${OSQUERY_DATA_PATH}/opt/osquery/osquery.app"
+    "${OSQUERY_DATA_PATH}/opt/agenttool/osquery.app"
 
   DESTINATION
-    "/opt/osquery/lib"
+    "/opt/agenttool/lib"
 
   USE_SOURCE_PERMISSIONS
 
@@ -25,19 +25,19 @@ install(
 )
 
 execute_process(
-  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/osquery/lib/osquery.app/Contents/MacOS/osqueryd" osqueryi
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/agenttool/lib/osquery.app/Contents/MacOS/agenttoold" agenttooli
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
 execute_process(
-  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/osquery/lib/osquery.app/Contents/Resources/osqueryctl" osqueryctl
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink "/opt/agenttool/lib/osquery.app/Contents/Resources/agenttoolctl" agenttoolctl
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 )
 
 install(
   FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/osqueryi"
-    "${CMAKE_CURRENT_BINARY_DIR}/osqueryctl"
+    "${CMAKE_CURRENT_BINARY_DIR}/agenttooli"
+    "${CMAKE_CURRENT_BINARY_DIR}/agenttoolctl"
   
   DESTINATION
     "/usr/local/bin/"
@@ -47,13 +47,13 @@ install(
 )
 
 install(
-  DIRECTORY "${OSQUERY_DATA_PATH}/private/var/osquery"
+  DIRECTORY "${OSQUERY_DATA_PATH}/private/var/agenttool"
   DESTINATION "/private/var"
   COMPONENT osquery
 )
 
 install(
   DIRECTORY
-  DESTINATION "/private/var/log/osquery"
+  DESTINATION "/private/var/log/agenttool"
   COMPONENT osquery
 )
